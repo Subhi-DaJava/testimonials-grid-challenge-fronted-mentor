@@ -1,0 +1,98 @@
+/*5.rule general, set box-sizing: border-box, all margin and padding = 0*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*4.Convert hsl (color) to hex code for the background-color of div.
+google : rgb to hex */
+/*6.make background color : Light grayish blue*/
+body {
+    background-color: #ecf2f8;
+}
+
+/*8.Create bid div id container, set the margin for the five divs*/
+#main-container {
+    padding: 5% 3%; /*5% for top & bottom 3% for left & right*/
+}
+
+/*7.set the background-color for each div*/
+/*8.set the color of the text*/
+#testimonial-1{
+background-color: #7541c8;
+color: #ffffff;
+}
+#testimonial-2{
+background-color: #48556a;
+color: #ffffff;
+}
+
+#testimonial-3{
+    background-color:  #ffffff;
+}
+#testimonial-4{
+    background-color: #19212e;
+    color: #ffffff;
+}
+#testimonial-5{
+    background-color: #ffffff;
+}
+/*9.set the margin bottom and padding for the items, create the class for each item class="grid-item"*/
+.grid-item {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+/*10. Create a breakpoint, responsive*/
+@media (min-width: 576px){
+    #main-container {
+        display: flex;
+        /*17.Set max-width for the big screen and make the items in the center of main-container*/
+        /*20.Change the max-width to 900px*/
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    /*13.Make div-5 occupy 25% of in div main-container, sub-left 75%*/
+    /*19.Change to the 30%*/
+    #testimonial-5 {
+        flex-basis: 25%;
+    }
+    /*15.Make the div sub-left flex and direction vertical to control using flexbox to distribute the top and bottom divs, justify-content, align-items*/
+    #sub-container-left {
+        display: flex;
+        flex-direction: column;
+        /*18.Set sub-left div occupy 75%*/
+        flex-basis: 75%;
+    }
+
+    /*14.Make display: flex; the 2 divs top & bottom the aligning of divs 1,2 (50%) & 3,4 (50%) */
+    #left-top {
+        display: flex;
+        flex-basis: 50%;
+    }
+    #left-bottom {
+        display: flex;
+        flex-basis: 50%;
+    }
+
+    /*16.Justify the items 1 75%,2 25% & 3 25%, 4 75%*/
+    #testimonial-1{
+        /*21.Adjusting the items again: 1 65%, 2 35% & 3 35%, 4 65%*/
+        flex-basis: 65%;
+    }
+    #testimonial-2{
+        flex-basis: 35%;
+    }
+        
+    #testimonial-3{
+        flex-basis: 35%;
+    }
+    #testimonial-4{
+       flex-basis: 65%;
+    }
+    /*22.Make a margin on the right for div 1,2,3,4*/
+    #sub-container-left .grid-item {
+        margin-right: 15px;
+    }
+   
+}
