@@ -1,0 +1,152 @@
+/*5.rule general, set box-sizing: border-box, all margin and padding = 0*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*4.Convert hsl (color) to hex code for the background-color of div.
+google : rgb to hex */
+/*6.make background color : Light grayish blue*/
+body {
+    background-color: #ecf2f8;
+    /*35.Set the font-family, google font(Barlow Semi Condensed, weight 500, 600), add the link in the head element, and sp */
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+/*8.Create bid div id container, set the margin for the five divs*/
+#main-container {
+    padding: 5% 3%; /*5% for top & bottom 3% for left & right*/
+}
+
+/*7.set the background-color for each div*/
+/*8.set the color of the text*/
+#testimonial-1{
+background-color: #7541c8;
+color: #ffffff;
+/*44.Set the container relative to #quote bg-pattern-quotation*/
+position: relative;
+z-index: 0;
+}
+#testimonial-2{
+background-color: #48556a;
+color: #ffffff;
+}
+
+#testimonial-3, #testimonial-5 {
+    background-color:  #ffffff;
+    /*36.Set the color #48556a for paragraphs in 3 & 5*/
+    color: #48556a;
+}
+#testimonial-4{
+    background-color: #19212e;
+    color: #ffffff;
+}
+
+/*9.set the margin bottom and padding for the items, create the class for each item class="grid-item"*/
+.grid-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    /*31.Make a ronder corner on each of the cards*/
+    border-radius: 5px;
+    /*32.Set a drop shadow for each of them, black color and 20% opacity*/
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2) ;
+    /*33.Set the font size written in style-guide.md*/
+    font-size: 13px;
+}
+
+/*37.Set the opacity 70% for the paragraph p (except Names p)in .grid-item, written in style-guide*/
+.grid-item p {
+    opacity: 70%;
+}
+
+/*38.Set the opacity 100% for the paragraph p class="name"(add this class also) in .header*/
+.header .name {
+    opacity: 100%;
+    /*39.Set the font-size for the name*/
+    font-size: 1rem;
+}
+
+/*25.Styling the images and the text, almost all same design, create commun class,flexbox (img  + text (name & Graduate) div) */
+.header {
+    display: flex;
+    align-items: center; /*26.Align the items on the cross axis*/
+    /*28.Set the margin-bottom: 20px; and a space between header and p*/
+    margin-bottom: 20px;
+    z-index: 3;
+    position: relative;
+}
+/*27.Styling the image, make a rond picture and space between picture and the header text: margin-right: 10px; */
+.header img {
+    border-radius: 50%;
+    margin-right: 10px;
+    /*40.Set the border of the image*/
+    border: 1.5px solid purple;
+}
+
+/*30.Set a margin(margin-bottom: 20px;) between the h3 and the text testimonie*/
+.grid-item h3 {
+    margin-bottom: 20px;
+    /*34.Set the font size for h3 in the .grid-item*/
+    font-size: 1.2rem;
+    /*41.Set the weight of the font*/
+    font-weight: 600;
+}
+
+/*43.St the style for the quote bg-pattern-quotation, position*/
+#quote{
+    position: absolute;
+    right: 15%;
+    top: 0;
+    /*45.Set the quote stands at behind of the p and testimonial-1 set to z-index: 0 and header z-index:3 and postion: relative*/
+    z-index: 1;
+}
+/*10. Create a breakpoint, responsive*/
+@media (min-width: 576px){
+
+    /*23.Refactoring & cleaning the code, and saved the file(style.css before refactoring)*/
+    #main-container,
+    #sub-container-left, 
+    #left-top, 
+    #left-bottom{
+        display: flex;
+    }
+    /*13.Make div-5 occupy 25% of in div main-container, sub-left 75%*/
+    /*19.Change to the 20%*/
+    #testimonial-5 {
+        flex-basis: 20%;
+    }
+    /*15.Make the div sub-left flex and direction vertical to control using flexbox to distribute the top and bottom divs, justify-content, align-items*/
+    #sub-container-left {
+        flex-direction: column;
+        /*18.Set sub-left div occupy 80%*/
+        flex-basis: 80%;
+    }
+    /*14.Make display: flex; the 2 divs top & bottom the aligning of divs 1,2 (50%) & 3,4 (50%) */
+    #left-top, #left-bottom {
+    flex-basis: 50%;
+    }
+    #main-container {
+        /*17.Set max-width for the big screen and make the items in the center of main-container*/
+        /*20.Change the max-width to 900px*/
+        /*46.Put the max-width 1440px in the style-guide*/
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+  
+    /*16.Justify the items 1 75%,2 25% & 3 25%, 4 75%*/
+    #testimonial-1, #testimonial-4{
+        /*21.Adjusting the items again: 1 65%, 2 35% & 3 35%, 4 65%*/
+        flex-basis: 65%;
+    }
+    #testimonial-2, #testimonial-3 {
+        flex-basis: 35%;
+    }
+
+    /*22.Make a margin on the right for div 1,2,3,4 and 5*/
+    #sub-container-left .grid-item {
+        margin-right: 20px;
+    }
+   
+}
+
